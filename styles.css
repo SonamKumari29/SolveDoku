@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to right, #f8b195, #f67280, #c06c84, #6c5b7b, #355c7d);
+
+}
+
+h1 {
+    display: block;
+    font-size: 40px;
+    color: #333;
+}
+
+table {
+    border-collapse: collapse;
+    font-family: Calibri, sans-serif;
+}
+
+colgroup, tbody {
+    border: 4px solid #2c3e50;
+}
+
+td {
+    border: 2px solid #2c3e50;
+    height: 3em; 
+    width: 3em;  
+    text-align: center;
+    padding: 0;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+button.solve, button.reset {
+    font-size: 20px;
+    margin: 1%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.solve:hover, button.reset:hover {
+    background-color: #2980b9;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+table.keypad {
+    visibility: hidden;
+    font-weight: bold;
+    width: 15%;
+    height: 38%;
+    background-color: #355c7d;
+    position: absolute;
+    top: 25%;
+    left: 42.5%;
+    opacity: 0.98;
+    color: white;
+}
+
+@media (max-device-aspect-ratio: 1/1) {
+    table.keypad {
+        left: 30%;
+        width: 40%;
+    }
+}
+
+table.keypad td {
+    border: 2px solid #2c3e50; 
+    font-size: 120%;
+    background-color: #355c7d; 
+    color: white;
+}
+
+table.keypad td:hover {
+    background-color: #f1970f;
+    color: #2c3e50; 
+}
