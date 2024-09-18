@@ -3,6 +3,10 @@
 
 **Solvedoku** is a web-based Sudoku solver that provides instant solutions using HTML, CSS and JavaScript.
 
+
+![SolveDoku](solvedoku.png)
+
+
 ## Features
 
 - **Instantly Solves**: Click "Find a solution" to solve.
