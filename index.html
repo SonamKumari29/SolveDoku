@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,145 +7,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SolveDoku</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>SolveDoku</h1>
-    <table class="sudoku">
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <tbody>
-            <tr>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-            <tr>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-            <tr>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-        <tbody>
-            <tr>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-            <tr>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-            <tr>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-        <tbody>
-            <tr>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-            <tr>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-            <tr>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-                <td>
-    </table>
-    <button class="solve"> Find a Solution!</button>
-    <button class="reset"> Reset</button>
-    <h2 class="message"></h2>
+    <div class="container">
+        <header>
+            <h1>SolveDoku</h1>
+            <p class="subtitle">Instant Sudoku Solver</p>
+        </header>
 
-    <table class="keypad">
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-        </tr>
-        <tr>
-            <td colspan="3">DELETE</td>
-        </tr>
-    </table>
+        <div class="game-container">
+            <table class="sudoku">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td data-row="0" data-col="0"></td>
+                        <td data-row="0" data-col="1"></td>
+                        <td data-row="0" data-col="2"></td>
+                        <td data-row="0" data-col="3"></td>
+                        <td data-row="0" data-col="4"></td>
+                        <td data-row="0" data-col="5"></td>
+                        <td data-row="0" data-col="6"></td>
+                        <td data-row="0" data-col="7"></td>
+                        <td data-row="0" data-col="8"></td>
+                    </tr>
+                    <tr>
+                        <td data-row="1" data-col="0"></td>
+                        <td data-row="1" data-col="1"></td>
+                        <td data-row="1" data-col="2"></td>
+                        <td data-row="1" data-col="3"></td>
+                        <td data-row="1" data-col="4"></td>
+                        <td data-row="1" data-col="5"></td>
+                        <td data-row="1" data-col="6"></td>
+                        <td data-row="1" data-col="7"></td>
+                        <td data-row="1" data-col="8"></td>
+                    </tr>
+                    <tr>
+                        <td data-row="2" data-col="0"></td>
+                        <td data-row="2" data-col="1"></td>
+                        <td data-row="2" data-col="2"></td>
+                        <td data-row="2" data-col="3"></td>
+                        <td data-row="2" data-col="4"></td>
+                        <td data-row="2" data-col="5"></td>
+                        <td data-row="2" data-col="6"></td>
+                        <td data-row="2" data-col="7"></td>
+                        <td data-row="2" data-col="8"></td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td data-row="3" data-col="0"></td>
+                        <td data-row="3" data-col="1"></td>
+                        <td data-row="3" data-col="2"></td>
+                        <td data-row="3" data-col="3"></td>
+                        <td data-row="3" data-col="4"></td>
+                        <td data-row="3" data-col="5"></td>
+                        <td data-row="3" data-col="6"></td>
+                        <td data-row="3" data-col="7"></td>
+                        <td data-row="3" data-col="8"></td>
+                    </tr>
+                    <tr>
+                        <td data-row="4" data-col="0"></td>
+                        <td data-row="4" data-col="1"></td>
+                        <td data-row="4" data-col="2"></td>
+                        <td data-row="4" data-col="3"></td>
+                        <td data-row="4" data-col="4"></td>
+                        <td data-row="4" data-col="5"></td>
+                        <td data-row="4" data-col="6"></td>
+                        <td data-row="4" data-col="7"></td>
+                        <td data-row="4" data-col="8"></td>
+                    </tr>
+                    <tr>
+                        <td data-row="5" data-col="0"></td>
+                        <td data-row="5" data-col="1"></td>
+                        <td data-row="5" data-col="2"></td>
+                        <td data-row="5" data-col="3"></td>
+                        <td data-row="5" data-col="4"></td>
+                        <td data-row="5" data-col="5"></td>
+                        <td data-row="5" data-col="6"></td>
+                        <td data-row="5" data-col="7"></td>
+                        <td data-row="5" data-col="8"></td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td data-row="6" data-col="0"></td>
+                        <td data-row="6" data-col="1"></td>
+                        <td data-row="6" data-col="2"></td>
+                        <td data-row="6" data-col="3"></td>
+                        <td data-row="6" data-col="4"></td>
+                        <td data-row="6" data-col="5"></td>
+                        <td data-row="6" data-col="6"></td>
+                        <td data-row="6" data-col="7"></td>
+                        <td data-row="6" data-col="8"></td>
+                    </tr>
+                    <tr>
+                        <td data-row="7" data-col="0"></td>
+                        <td data-row="7" data-col="1"></td>
+                        <td data-row="7" data-col="2"></td>
+                        <td data-row="7" data-col="3"></td>
+                        <td data-row="7" data-col="4"></td>
+                        <td data-row="7" data-col="5"></td>
+                        <td data-row="7" data-col="6"></td>
+                        <td data-row="7" data-col="7"></td>
+                        <td data-row="7" data-col="8"></td>
+                    </tr>
+                    <tr>
+                        <td data-row="8" data-col="0"></td>
+                        <td data-row="8" data-col="1"></td>
+                        <td data-row="8" data-col="2"></td>
+                        <td data-row="8" data-col="3"></td>
+                        <td data-row="8" data-col="4"></td>
+                        <td data-row="8" data-col="5"></td>
+                        <td data-row="8" data-col="6"></td>
+                        <td data-row="8" data-col="7"></td>
+                        <td data-row="8" data-col="8"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="buttons-container">
+                <button class="solve">Find a Solution!</button>
+                <button class="reset">Reset</button>
+            </div>
+
+            <h2 class="message"></h2>
+        </div>
+
+        <table class="keypad">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td colspan="3">DELETE</td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <p>Click on a cell to enter a number</p>
+    </footer>
     <script src="script.js"></script>
+    <script src="error-handling.js"></script>
 </body>
 
 </html>
