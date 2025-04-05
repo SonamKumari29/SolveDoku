@@ -26,7 +26,7 @@ Check out the live version [here](https://sonamkumari29.github.io/SolveDoku/).
 
 1. **Clone the repo**:
    ```bash
-   git clone https://github.com/SonamKumari29/solvedoku.git
+   git clone https://github.com/SonamKumari29/SolveDoku.git
    ```
 
 2. **Open `index.html`** in a browser.
