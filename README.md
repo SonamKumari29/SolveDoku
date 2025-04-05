@@ -3,20 +3,20 @@
 
 **Solvedoku** is a web-based Sudoku solver that provides instant solutions using HTML, CSS and JavaScript.
 
+![image](https://github.com/user-attachments/assets/3cddb875-565d-4fc1-bbac-2cedba85b4ad)
 
-![SolveDoku](solvedoku.png)
 
+## Features  
+- **Instantly Solves**: Click "Find a solution" to solve.  
+- **Interactive**: Select cells and use the keypad to enter numbers.  
+- **Error Handling**: Detects and highlights duplicate numbers in rows, columns, and 3x3 boxes.  
 
-## Features
+## How It Works  
+- **Display Grid**: Renders a 9x9 Sudoku grid.  
+- **Solve Puzzle**: Uses backtracking to solve the puzzle and update the grid.  
+- **User Interaction**: Click on cells to select and enter numbers via the keypad.  
+- **Validation & Error Handling**: Prevents invalid inputs, highlights conflicts, and displays error messages.  
 
-- **Instantly Solves**: Click "Find a solution" to solve.
-- **Interactive**: Select cells and use the keypad to enter numbers.
-
-## How It Works
-
-- **Display Grid**: Renders a 9x9 Sudoku grid.
-- **Solve Puzzle**: Uses backtracking to solve the puzzle and update the grid.
-- **User Interaction**: Click on cells to select and enter numbers via the keypad.
 
 ## Live Demo
 
