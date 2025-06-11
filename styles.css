@@ -576,4 +576,263 @@
     box-shadow: 0 2px 8px #6a11cb44;
   }
   
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 10;
+  }
+  #how-to-play, #theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #6a11cb;
+    border-radius: 50%;
+    padding: 6px 10px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+    outline: none;
+    box-shadow: none;
+  }
+  #how-to-play:hover, #theme-toggle:hover {
+    background: #ffe25933;
+    color: #2575fc;
+    transform: scale(1.12) rotate(-8deg);
+    box-shadow: 0 2px 8px #ffe25944;
+  }
+  body.dark #how-to-play, body.dark #theme-toggle {
+    color: #ffe259;
+  }
+  body.dark #how-to-play:hover, body.dark #theme-toggle:hover {
+    background: #6a11cb33;
+    color: #ffe259;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(40,40,60,0.18);
+    backdrop-filter: blur(2px);
+    animation: fadeInModal 0.3s;
+  }
+  .modal.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .modal-content {
+    background: linear-gradient(120deg, #fffbe6 0%, #ffe259 100%);
+    color: #232526;
+    border-radius: 24px;
+    padding: 32px 24px 24px 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    max-width: 95vw;
+    width: 370px;
+    position: relative;
+    animation: popInModal 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+    text-align: left;
+  }
+  @keyframes popInModal {
+    0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
+  .modal-content h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #6a11cb;
+    text-align: center;
+  }
+  .modal-content ol {
+    margin: 18px 0 10px 18px;
+    padding: 0 0 0 18px;
+    font-size: 1.05rem;
+    color: #232526;
+  }
+  .modal-content .tip {
+    margin-top: 12px;
+    font-style: italic;
+    color: #b86b00;
+    background: #fffbe6;
+    border-radius: 10px;
+    padding: 7px 12px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .close-modal {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #6a11cb;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    outline: none;
+  }
+  .close-modal:hover {
+    background: #ffe25933;
+    color: #c0392b;
+    transform: scale(1.15) rotate(8deg);
+  }
+  body.dark .modal-content {
+    background: linear-gradient(120deg, #232526 0%, #6a11cb 100%);
+    color: #ffe259;
+    box-shadow: 0 8px 32px 0 #6a11cb44;
+  }
+  body.dark .modal-content h2 {
+    color: #ffe259;
+  }
+  body.dark .modal-content ol {
+    color: #ffe259;
+  }
+  body.dark .modal-content .tip {
+    background: #6a11cb33;
+    color: #ffe259;
+  }
+  body.dark .close-modal {
+    color: #ffe259;
+  }
+  body.dark .close-modal:hover {
+    background: #6a11cb33;
+    color: #ff6347;
+  }
+  @media (max-width: 500px) {
+    .modal-content {
+        padding: 18px 6vw 18px 6vw;
+        width: 98vw;
+        min-width: 0;
+        font-size: 0.98rem;
+    }
+    .modal-content h2 {
+        font-size: 1.1rem;
+    }
+  }
+  
+  .header-actions-below {
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 12px auto 0 auto;
+    position: static;
+    display: flex;
+  }
+  @media (max-width: 700px) {
+    .header-actions-below {
+        gap: 12px;
+        margin: 10px auto 0 auto;
+    }
+    #how-to-play, #theme-toggle {
+        font-size: 1.3rem;
+        padding: 4px 7px;
+    }
+  }
+  @media (max-width: 500px) {
+    .header-actions-below {
+        gap: 8px;
+        margin: 7px auto 0 auto;
+    }
+    #how-to-play, #theme-toggle {
+        font-size: 1.1rem;
+        padding: 2px 5px;
+    }
+  }
+  
+  #how-to-play {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #ffe259 0%, #ffa751 100%);
+    color: #6a11cb;
+    font-weight: 700;
+    font-size: 1.12rem;
+    border: 3px solid transparent;
+    border-radius: 999px;
+    padding: 10px 26px 10px 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 12px #ffe25933;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s, transform 0.15s;
+    outline: none;
+    margin-right: 2px;
+    position: relative;
+    overflow: visible;
+    min-width: 0;
+    width: max-content;
+  }
+  #how-to-play .howto-icon, #how-to-play .howto-text {
+    background: transparent;
+  }
+  #how-to-play:hover {
+    background: linear-gradient(90deg, #6a11cb 0%, #ffe259 100%);
+    color: #fff;
+    box-shadow: 0 4px 18px #6a11cb44;
+    border: 3px solid #6a11cb;
+    transform: scale(1.07);
+  }
+  .howto-icon {
+    font-size: 1.45em;
+    font-weight: 900;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 2px 8px #ffe25988;
+    margin-top: 1px;
+  }
+  .howto-text {
+    font-size: 1.12em;
+    font-weight: 700;
+    color: inherit;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+  }
+  body.dark #how-to-play {
+    background: linear-gradient(90deg, #6a11cb 0%, #ffe259 100%);
+    color: #232526;
+    box-shadow: 0 2px 12px #6a11cb44;
+    border: 3px solid #ffe259;
+  }
+  body.dark #how-to-play:hover {
+    background: linear-gradient(90deg, #ffe259 0%, #6a11cb 100%);
+    color: #ffe259;
+    box-shadow: 0 4px 18px #ffe25944;
+    border: 3px solid #ffe259;
+  }
+  @media (max-width: 700px) {
+    #how-to-play {
+        font-size: 1rem;
+        padding: 8px 12px 8px 12px;
+        gap: 7px;
+    }
+    .howto-icon {
+        font-size: 1.15em;
+    }
+  }
+  @media (max-width: 500px) {
+    #how-to-play {
+        font-size: 0.93rem;
+        padding: 6px 7px 6px 7px;
+        gap: 5px;
+    }
+    .howto-icon {
+        font-size: 1em;
+    }
+  }
+  
   

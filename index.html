@@ -17,7 +17,13 @@
         <header>
             <h1>SolveDoku</h1>
             <!-- <p class="subtitle">Your Sudoku Tutor</p> -->
-            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+            <div class="header-actions header-actions-below">
+                <button id="how-to-play" aria-label="How to Play" title="How to Play">
+                    <span class="howto-icon">❓</span>
+                    <span class="howto-text">How to Play</span>
+                </button>
+                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
         </header>
 
         <div class="game-container">
@@ -193,6 +199,22 @@
     <footer>
         <p>Click on a cell to enter a number</p>
     </footer>
+    <div id="how-to-play-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close">&times;</button>
+            <h2>How to Play SolveDoku</h2>
+            <ol>
+                <li>The goal is to fill the 9x9 grid so that each row, column, and 3x3 box contains the numbers 1 to 9 exactly once.</li>
+                <li>Click on a cell and use the keypad or your keyboard to enter a number.</li>
+                <li>Use the <b>Hint</b> button for help (limited to 5 per puzzle).</li>
+                <li>Click <b>New Puzzle</b> to start a new game with your chosen difficulty.</li>
+                <li>Use <b>Solution</b> to reveal the answer, or <b>Reset</b> to clear the board.</li>
+                <li>Errors are highlighted automatically. Try to avoid duplicates!</li>
+                <li>Track your time and aim for your best score!</li>
+            </ol>
+            <p class="tip">Tip: Use logic, not guessing! Every puzzle has a unique solution.</p>
+        </div>
+    </div>
     <script src="script.js"></script>
     <script src="error-handling.js"></script>
 </body>

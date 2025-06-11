@@ -395,3 +395,33 @@ function resetTimer() {
     timerSeconds = 0;
     updateTimerDisplay();
 }
+
+// --- HOW TO PLAY MODAL LOGIC ---
+const howToPlayBtn = document.getElementById('how-to-play');
+const howToPlayModal = document.getElementById('how-to-play-modal');
+const closeModalBtn = document.querySelector('.close-modal');
+
+howToPlayBtn.addEventListener('click', () => {
+    howToPlayModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeModalBtn.focus();
+});
+closeModalBtn.addEventListener('click', () => {
+    howToPlayModal.classList.remove('open');
+    document.body.style.overflow = '';
+    howToPlayBtn.focus();
+});
+howToPlayModal.addEventListener('click', (e) => {
+    if (e.target === howToPlayModal) {
+        howToPlayModal.classList.remove('open');
+        document.body.style.overflow = '';
+        howToPlayBtn.focus();
+    }
+});
+document.addEventListener('keydown', (e) => {
+    if (howToPlayModal.classList.contains('open') && (e.key === 'Escape' || e.key === 'Esc')) {
+        howToPlayModal.classList.remove('open');
+        document.body.style.overflow = '';
+        howToPlayBtn.focus();
+    }
+});
