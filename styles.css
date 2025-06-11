@@ -542,15 +542,25 @@
   #theme-toggle {
     background: none;
     border: none;
-    font-size: 1.5rem;
     cursor: pointer;
-    margin-left: 10px;
-    color: var(--text-main);
-    transition: color 0.3s;
-    outline: none;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
   }
-  #theme-toggle:focus {
-    outline: 2px solid #6a11cb;
+  
+  #theme-toggle:hover {
+    background: rgba(255, 0, 0, 0.1);
+    transform: scale(1.1);
+  }
+  
+  body.dark #theme-toggle {
+    color: #ff4444;
   }
   
   /* Dark theme */

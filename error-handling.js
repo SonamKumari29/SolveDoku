@@ -25,10 +25,8 @@ function validatePuzzle() {
   let errorMessage = "";
   const grid = createGridFromUI();
 
-  // Clear previous errors
   clearErrors();
 
-  // Check rows
   for (let row = 0; row < 9; row++) {
     const rowErrors = checkDuplicatesInRow(grid, row);
     if (rowErrors.length > 0) {
@@ -40,7 +38,6 @@ function validatePuzzle() {
     }
   }
 
-  // Check columns
   for (let col = 0; col < 9; col++) {
     const colErrors = checkDuplicatesInColumn(grid, col);
     if (colErrors.length > 0) {
@@ -52,7 +49,6 @@ function validatePuzzle() {
     }
   }
 
-  // Check boxes
   for (let boxRow = 0; boxRow < 3; boxRow++) {
     for (let boxCol = 0; boxCol < 3; boxCol++) {
       const boxErrors = checkDuplicatesInBox(grid, boxRow, boxCol);
@@ -150,7 +146,6 @@ function highlightErrors(errors) {
   errors.forEach((error) => {
     const cellIndex = error.row * 9 + error.col;
     cells[cellIndex].classList.add("error");
-    // Add shake animation
     cells[cellIndex].style.animation = "shake 0.5s cubic-bezier(.36,.07,.19,.97) both";
   });
 }
@@ -164,7 +159,6 @@ function clearErrors() {
   messageElement.classList.remove("visible");
 }
 
-// Add shake animation to CSS
 const style = document.createElement('style');
 style.textContent = `
     @keyframes shake {
