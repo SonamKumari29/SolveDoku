@@ -426,25 +426,27 @@
   /* Responsive styles */
   @media (max-width: 700px) {
     .game-container {
-      padding: 8px 2vw;
-      width: 100vw;
-      max-width: 100vw;
+      padding: 15px;
+      width: 100%;
+      max-width: 100%;
       min-width: 0;
       border-radius: 14px;
       box-sizing: border-box;
     }
     .buttons-container {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 14px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
     }
     .buttons-container select,
     .buttons-container button {
-      width: 100%;
+      width: auto;
       min-width: 0;
-      max-width: 100%;
-      font-size: 1rem;
-      padding: 14px 0;
+      max-width: none;
+      font-size: 0.9rem;
+      padding: 10px 15px;
       margin: 0;
       box-sizing: border-box;
     }
@@ -457,36 +459,82 @@
       box-shadow: none;
       position: relative;
       z-index: 1;
+      flex: 1;
+      min-width: 100px;
     }
     .buttons-container button {
       margin: 0;
       z-index: 2;
+      flex: 1;
+      min-width: 100px;
     }
     .hint-counter {
       justify-content: center;
       margin: 10px auto 0 auto;
       font-size: 1.2rem;
     }
+    .sudoku td {
+      height: 35px;
+      width: 35px;
+      font-size: 1.1rem;
+    }
   }
   
   @media (max-width: 500px) {
     .game-container {
-      padding: 2vw 1vw;
-      width: 100vw;
-      max-width: 100vw;
+      padding: 10px;
+      width: 100%;
+      max-width: 100%;
       min-width: 0;
       border-radius: 8px;
     }
     .buttons-container {
-      gap: 10px;
+      gap: 6px;
+    }
+    .buttons-container select,
+    .buttons-container button {
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      min-width: 80px;
+    }
+    .sudoku td {
+      height: 32px;
+      width: 32px;
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+    .timer-container {
+      font-size: 0.9rem;
+      padding: 4px 12px;
+    }
+    .timer-label, .timer {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .buttons-container {
+      gap: 4px;
+    }
+    .buttons-container select,
+    .buttons-container button {
+      font-size: 0.75rem;
+      padding: 6px 10px;
+      min-width: 70px;
     }
     .sudoku td {
       height: 28px;
       width: 28px;
       font-size: 0.9rem;
     }
-    h1 {
-      font-size: 1.5rem;
+    .timer-container {
+      font-size: 0.8rem;
+      padding: 3px 10px;
+    }
+    .timer-label, .timer {
+      font-size: 0.8rem;
     }
   }
   
