@@ -731,25 +731,35 @@
     margin: 12px auto 0 auto;
     position: static;
     display: flex;
+    flex-wrap: wrap;
+    z-index: 20;
   }
   @media (max-width: 700px) {
     .header-actions-below {
         gap: 12px;
-        margin: 10px auto 0 auto;
+        margin: 14px auto 10px auto;
+        flex-wrap: wrap;
     }
-    #how-to-play, #theme-toggle {
-        font-size: 1.3rem;
-        padding: 4px 7px;
+    #how-to-play {
+        font-size: 0.98rem;
+        padding: 6px 10px 6px 10px;
+        min-width: 0;
+        max-width: 100vw;
+        margin-bottom: 6px;
     }
   }
   @media (max-width: 500px) {
     .header-actions-below {
         gap: 8px;
-        margin: 7px auto 0 auto;
+        margin: 10px auto 8px auto;
+        flex-wrap: wrap;
     }
-    #how-to-play, #theme-toggle {
-        font-size: 1.1rem;
-        padding: 2px 5px;
+    #how-to-play {
+        font-size: 0.89rem;
+        padding: 4px 5px 4px 5px;
+        min-width: 0;
+        max-width: 100vw;
+        margin-bottom: 7px;
     }
   }
   
