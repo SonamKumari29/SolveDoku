@@ -247,7 +247,6 @@ function generatePuzzle(difficulty) {
         if (puzzle[row][col] !== 0) {
             let backup = puzzle[row][col];
             puzzle[row][col] = 0;
-            // Optionally: check for unique solution here
             attempts--;
         }
     }
@@ -319,6 +318,8 @@ const difficultySelect = document.getElementById('difficulty');
 const solveBtn = document.querySelector('.solve');
 
 newPuzzleBtn.addEventListener('click', () => {
+    resetTimer();
+    startTimer();
     const diff = difficultySelect.value;
     const { puzzle, solution } = generatePuzzle(diff);
     setGridUI(puzzle);
@@ -347,10 +348,13 @@ solveBtn.addEventListener('click', () => {
     } else {
         showMessage('No solution available!', 'error');
     }
+    stopTimer();
 });
 
 // On page load, generate an easy puzzle
 window.addEventListener('DOMContentLoaded', () => {
+    resetTimer();
+    startTimer();
     const { puzzle, solution } = generatePuzzle('easy');
     setGridUI(puzzle);
     currentSolution = solution;
@@ -359,3 +363,33 @@ window.addEventListener('DOMContentLoaded', () => {
     updateHintCounter();
     validatePuzzle();
 });
+
+// --- TIMER SYSTEM ---
+let timerInterval = null;
+let timerSeconds = 0;
+const timerDisplay = document.querySelector('.timer');
+
+function updateTimerDisplay() {
+    const min = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+    const sec = String(timerSeconds % 60).padStart(2, '0');
+    timerDisplay.textContent = `${min}:${sec}`;
+}
+
+function startTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timerSeconds++;
+        updateTimerDisplay();
+    }, 1000);
+}
+
+function stopTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    timerInterval = null;
+}
+
+function resetTimer() {
+    stopTimer();
+    timerSeconds = 0;
+    updateTimerDisplay();
+}

@@ -314,7 +314,7 @@
   .message {
     font-size: 1.15rem;
     font-weight: 600;
-    margin: 12px 0 0 0;
+    margin: 12px auto 0 auto;
     height: auto;
     min-height: 32px;
     text-align: center;
@@ -330,13 +330,11 @@
     display: inline-block;
     max-width: 90vw;
     position: relative;
-    left: 50%;
-    transform: translate(-50%, -10px);
   }
   
   .message.visible {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translateY(0);
   }
   
   .message.warning {
@@ -432,7 +430,7 @@
     .buttons-container {
       flex-direction: column;
       align-items: stretch;
-      gap: 10px;
+      gap: 14px;
     }
     .buttons-container select,
     .buttons-container button {
@@ -440,11 +438,27 @@
       min-width: 0;
       max-width: 100%;
       font-size: 1rem;
-      padding: 12px 0;
+      padding: 14px 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .buttons-container select {
+      text-align: center;
+      text-align-last: center;
+      border-width: 2px;
+      margin: 0;
+      background-clip: padding-box;
+      box-shadow: none;
+      position: relative;
+      z-index: 1;
+    }
+    .buttons-container button {
+      margin: 0;
+      z-index: 2;
     }
     .hint-counter {
       justify-content: center;
-      margin: 12px auto 0 auto;
+      margin: 10px auto 0 auto;
       font-size: 1.2rem;
     }
   }
@@ -455,7 +469,7 @@
       width: 100vw;
     }
     .buttons-container {
-      gap: 7px;
+      gap: 10px;
     }
     .sudoku td {
       height: 28px;
@@ -526,6 +540,31 @@
   }
   body.dark .hint-icon {
     filter: drop-shadow(0 0 6px #ffe259);
+  }
+  
+  .timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #6a11cb;
+    background: rgba(255,255,255,0.7);
+    border-radius: 18px;
+    padding: 6px 18px;
+    box-shadow: 0 2px 8px #6a11cb22;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .timer-label {
+    margin-right: 6px;
+  }
+  body.dark .timer-container {
+    background: rgba(40,40,60,0.98);
+    color: #ffe259;
+    box-shadow: 0 2px 8px #6a11cb44;
   }
   
   
