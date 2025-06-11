@@ -25,46 +25,45 @@ function validatePuzzle() {
   let errorMessage = "";
   const grid = createGridFromUI();
 
+  // Clear previous errors
+  clearErrors();
+
+  // Check rows
   for (let row = 0; row < 9; row++) {
     const rowErrors = checkDuplicatesInRow(grid, row);
     if (rowErrors.length > 0) {
       highlightErrors(rowErrors);
       errorMessage = "Duplicate numbers in row " + (row + 1);
       isValid = false;
-      break;
+      showMessage(errorMessage, true);
+      return false;
     }
   }
 
-  if (isValid) {
-    for (let col = 0; col < 9; col++) {
-      const colErrors = checkDuplicatesInColumn(grid, col);
-      if (colErrors.length > 0) {
-        highlightErrors(colErrors);
-        errorMessage = "Duplicate numbers in column " + (col + 1);
+  // Check columns
+  for (let col = 0; col < 9; col++) {
+    const colErrors = checkDuplicatesInColumn(grid, col);
+    if (colErrors.length > 0) {
+      highlightErrors(colErrors);
+      errorMessage = "Duplicate numbers in column " + (col + 1);
+      isValid = false;
+      showMessage(errorMessage, true);
+      return false;
+    }
+  }
+
+  // Check boxes
+  for (let boxRow = 0; boxRow < 3; boxRow++) {
+    for (let boxCol = 0; boxCol < 3; boxCol++) {
+      const boxErrors = checkDuplicatesInBox(grid, boxRow, boxCol);
+      if (boxErrors.length > 0) {
+        highlightErrors(boxErrors);
+        errorMessage = "Duplicate numbers in box at position " + (boxRow * 3 + boxCol + 1);
         isValid = false;
-        break;
+        showMessage(errorMessage, true);
+        return false;
       }
     }
-  }
-
-  if (isValid) {
-    for (let boxRow = 0; boxRow < 3; boxRow++) {
-      for (let boxCol = 0; boxCol < 3; boxCol++) {
-        const boxErrors = checkDuplicatesInBox(grid, boxRow, boxCol);
-        if (boxErrors.length > 0) {
-          highlightErrors(boxErrors);
-          errorMessage = "Duplicate numbers in box at position " + (boxRow * 3 + boxCol + 1);
-          isValid = false;
-          break;
-        }
-      }
-      if (!isValid) break;
-    }
-  }
-
-  if (!isValid) {
-    messageElement.innerText = errorMessage;
-    messageElement.style.color = "red";
   }
 
   return isValid;
@@ -151,15 +150,31 @@ function highlightErrors(errors) {
   errors.forEach((error) => {
     const cellIndex = error.row * 9 + error.col;
     cells[cellIndex].classList.add("error");
+    // Add shake animation
+    cells[cellIndex].style.animation = "shake 0.5s cubic-bezier(.36,.07,.19,.97) both";
   });
 }
 
 function clearErrors() {
   cells.forEach((cell) => {
     cell.classList.remove("error");
+    cell.style.animation = "";
   });
   messageElement.innerText = "";
+  messageElement.classList.remove("visible");
 }
+
+// Add shake animation to CSS
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes shake {
+        10%, 90% { transform: translate3d(-1px, 0, 0); }
+        20%, 80% { transform: translate3d(2px, 0, 0); }
+        30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+        40%, 60% { transform: translate3d(4px, 0, 0); }
+    }
+`;
+document.head.appendChild(style);
 
 cells.forEach((cell) => {
   cell.addEventListener("input", function () {

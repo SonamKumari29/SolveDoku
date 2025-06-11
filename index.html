@@ -16,7 +16,8 @@
     <div class="container">
         <header>
             <h1>SolveDoku</h1>
-            <p class="subtitle">Instant Sudoku Solver</p>
+            <!-- <p class="subtitle">Your Sudoku Tutor</p> -->
+            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
         </header>
 
         <div class="game-container">
@@ -144,33 +145,47 @@
             </table>
 
             <div class="buttons-container">
-                <button class="solve">Find a Solution!</button>
+                <select id="difficulty" aria-label="Select difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <button class="new-puzzle">New Puzzle</button>
+                <button class="hint">Hint</button>
+                <button class="solve">Solution</button>
                 <button class="reset">Reset</button>
             </div>
+            <span class="hint-counter" aria-label="Hints left">
+                <span class="hint-icon">💡</span>
+                <span class="hint-icon">💡</span>
+                <span class="hint-icon">💡</span>
+                <span class="hint-icon">💡</span>
+                <span class="hint-icon">💡</span>
+            </span>
 
             <h2 class="message"></h2>
-        </div>
 
-        <table class="keypad">
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-            </tr>
-            <tr>
-                <td colspan="3">DELETE</td>
-            </tr>
-        </table>
+            <table class="keypad">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td colspan="3">DELETE</td>
+                </tr>
+            </table>
+        </div>
     </div>
     <footer>
         <p>Click on a cell to enter a number</p>
