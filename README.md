@@ -1,33 +1,45 @@
+# SolveDoku 🎯
 
-# Solvedoku
+![SolveDoku](SolveDoku.png)
 
-**Solvedoku** is a web-based Sudoku solver that provides instant solutions using HTML, CSS and JavaScript.
+A modern Sudoku puzzle solver with real-time validation and smart features. Play online at [SolveDoku](https://sonamkumari29.github.io/SolveDoku/)
 
-![image](https://github.com/user-attachments/assets/3cddb875-565d-4fc1-bbac-2cedba85b4ad)
+## ✨ Features
+- Multiple difficulty levels (Easy, Medium, Hard)
+- Smart hint system with 5 hints per puzzle
+- Real-time error detection
+- Timer tracking
+- Dark/Light theme
+- Mobile-friendly design
+
+## 🛠️ Tech Stack
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Backtracking Algorithm for puzzle generation
+
+## 🚀 Getting Started
+
+1. Clone the repository
+```bash
+git clone https://github.com/SonamKumari29/SolveDoku.git
+```
+
+2. Open `index.html` in your browser
+
+## 🎮 How to Play
+1. Select difficulty level
+2. Click cells to input numbers
+3. Use hints when stuck
+4. Track your time
+5. Try to solve without errors!
+
+---
+
+Made with ❤️ by Sonam Kumari
 
 
-## Features  
-- **Instantly Solves**: Click "Find a solution" to solve.  
-- **Interactive**: Select cells and use the keypad to enter numbers.  
-- **Error Handling**: Detects and highlights duplicate numbers in rows, columns, and 3x3 boxes.  
-
-## How It Works  
-- **Display Grid**: Renders a 9x9 Sudoku grid.  
-- **Solve Puzzle**: Uses backtracking to solve the puzzle and update the grid.  
-- **User Interaction**: Click on cells to select and enter numbers via the keypad.  
-- **Validation & Error Handling**: Prevents invalid inputs, highlights conflicts, and displays error messages.  
 
 
-## Live Demo
 
-Check out the live version [here](https://sonamkumari29.github.io/SolveDoku/).
-
-## Getting Started
-
-1. **Clone the repo**:
-   ```bash
-   git clone https://github.com/SonamKumari29/SolveDoku.git
-   ```
-
-2. **Open `index.html`** in a browser.
 
