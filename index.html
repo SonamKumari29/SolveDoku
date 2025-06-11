@@ -17,18 +17,16 @@
         <header>
             <h1>SolveDoku</h1>
             <!-- <p class="subtitle">Your Sudoku Tutor</p> -->
-            <div class="header-actions header-actions-below">
-                <button id="how-to-play" aria-label="How to Play" title="How to Play">
-                    <span class="howto-icon">❓</span>
-                    <span class="howto-text">How to Play</span>
-                </button>
-                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-            </div>
         </header>
-
         <div class="game-container">
-            <div class="timer-container">
-                <span class="timer-label">⏱️ Time:</span> <span class="timer">00:00</span>
+            <div class="timer-row">
+                <button id="how-to-play" aria-label="How to Play" title="How to Play">
+                    <span class="howto-icon">?</span>
+                </button>
+                <div class="timer-container">
+                    <span class="timer-label">⏱️ Time:</span> <span class="timer">00:00</span>
+                </div>
+                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
             </div>
             <table class="sudoku">
                 <colgroup>
