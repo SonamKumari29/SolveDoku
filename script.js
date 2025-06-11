@@ -343,12 +343,14 @@ hintBtn.addEventListener('click', () => {
 solveBtn.addEventListener('click', () => {
     if (currentSolution) {
         setGridUI(currentSolution);
-        showMessage('Solution revealed!');
+        stopTimer();
+        const min = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+        const sec = String(timerSeconds % 60).padStart(2, '0');
+        showMessage(`You completed the puzzle in ${min}:${sec}!`);
         validatePuzzle();
     } else {
         showMessage('No solution available!', 'error');
     }
-    stopTimer();
 });
 
 // On page load, generate an easy puzzle
