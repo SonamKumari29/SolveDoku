@@ -616,8 +616,9 @@
     width: 100%;
     max-width: 420px;
     margin: 0 auto 10px auto;
-    gap: 0;
+    gap: 8px;
     position: relative;
+    flex-wrap: wrap;
   }
   .timer-container {
     flex: 1 1 auto;
@@ -629,25 +630,46 @@
     color: #6a11cb;
     background: rgba(255,255,255,0.7);
     border-radius: 18px;
-    padding: 6px 18px;
+    padding: 6px 12px;
     box-shadow: 0 2px 8px #6a11cb22;
-    min-width: 120px;
-    max-width: 260px;
-    margin: 0 10px;
+    min-width: 100px;
+    max-width: 200px;
+    margin: 0 auto;
   }
   .timer-label, .timer {
-    margin: 0 8px;
-    font-size: 1.13em;
+    margin: 0 4px;
+    font-size: 1.1em;
     font-weight: 700;
     color: inherit;
+    white-space: nowrap;
   }
-  .timer-label {
-    letter-spacing: 0.5px;
+  @media (max-width: 700px) {
+    .timer-row {
+        gap: 6px;
+        padding: 0 5px;
+    }
+    
+    .timer-container {
+        font-size: 1rem;
+        padding: 4px 10px;
+        min-width: 90px;
+    }
+    
+    .timer-label, .timer {
+        font-size: 1em;
+        margin: 0 2px;
+    }
   }
-  .timer {
-    min-width: 60px;
-    display: inline-block;
-    text-align: center;
+  @media (max-width: 400px) {
+    .timer-container {
+        font-size: 0.9rem;
+        padding: 3px 8px;
+        min-width: 80px;
+    }
+    
+    .timer-label, .timer {
+        font-size: 0.9em;
+    }
   }
   #how-to-play, #theme-toggle {
     flex-shrink: 0;
