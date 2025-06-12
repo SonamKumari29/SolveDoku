@@ -36,9 +36,6 @@ git clone https://github.com/SonamKumari29/SolveDoku.git
 
 ---
 
-Made with ❤️ by Sonam Kumari
-
-
 
 
 
